@@ -4,5 +4,5 @@
 
 class Mensaje {
 
-    fechaHora;
+    dateTime;
 }

@@ -7,9 +7,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div class="MiMensaje">
+        <h3>Mi Mensaje</h3>
+        <div class="miMensaje">
+            <textarea 
+                id="cajaMiMensaje" rows="2" cols="50">Escriba aquí
+            </textarea>
             
+            <!-- Ejemplo de acoplamiento fuerte
             
+            <button 
+                id="enviar" 
+                onclick="enviarMensaje
+                    (document.getElementById('cajaMiMensaje').value);"
+                >Enviar
+            </button>
+            -->
+            
+            <!-- Ejemplo de acoplamiento debil -->
+            
+            <script type="module" src="/js/chatControler.js"></script>
+            
+            <button id="enviarBoton">Enviar </button>
+            
+
+            
+
         </div>
     </body>
 </html>

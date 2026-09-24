@@ -7,13 +7,25 @@
  * @param {type} mensaje Los mensajes a enviar
  * @returns {undefined} Undefined 
  */
-function enviarMensaje(mensaje){
+
+import {Mensaje} from './mensaje.js'
+
+var mensajes=new Array();
+
+function enviarMensaje(){
     // Poniendo un <textarea> el usuario visualiza el mensaje a enviar.
     //Tambien se definira q por defecto este escrito "Escriba Aqui".
-    let textoMensaje=document.getElementById('enviarBoton').value;
+    
+    let textoMensaje=document.getElementById('cajaMiMensaje').value;
+    
     //Lo añadimos a la coleccion de mensajes
-    mensajes.add(new Mensaje(textoMensaje,new Date));
-
+    
+    mensajes.push(new Mensaje(textoMensaje,new Date()));
+    
+    //Limpiamos la caja de texto del mensaje
+    document.getElementById('cajaMiMensaje').value="";
+    //Enfocamos la caja de texto del mensaje
+    document.getElementById('cajaMiMensaje').focus();
 }
 
 //Asoscio la funcion de enviar mensaje como manejadora del evento click del

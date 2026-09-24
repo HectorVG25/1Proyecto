@@ -3,10 +3,9 @@
  */
 
 class Mensaje {
-    /**
-     * 
-     * @type String
-     */
-    texto = "";
+    constructor(text, dateTime){
+        this.text = text;
+    }
 }
 
+export{Mensaje};

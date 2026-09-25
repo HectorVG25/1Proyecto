@@ -1,18 +1,34 @@
 <!DOCTYPE html>
+
 <html>
-       <head>
+    <head>
         <title>Chat</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    
+
     <body>
         <h3>Mensajes</h3>
-        <div id="msgContainer"><ul id="msgList"></ul></div>
-        <h3>Mis mensajes</h3>
-        <textarea id="msgText"></textarea>
-        <button id="sendButton">Enviar</button>
+        <div id="msgContainer">
+            <ul id="msgList"></ul>
+        </div>
         
-        <script type ="module" src="../js/chatController.js"></script>
+        <h3>Mi Mensaje</h3>
+
+        <div class="miMensaje">
+
+            <textarea id="cajaMiMensaje">Escriba aquí</textarea>
+            <!-- Ejemplo de acoplamiento fuerte           
+            <button 
+                id="enviar" 
+                onclick="enviarMensaje(document.getElementById('cajaMiMensaje').value);">
+                Enviar
+            </button> -->
+            <!-- Ejemplo de acoplamiento debil -->
+
+            <button id="enviarBoton">Enviar</button>
+        </div>
+        <script type="module" src="../js/chatController.js"></script>
+
     </body>
 </html>

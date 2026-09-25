@@ -7,22 +7,17 @@
  * @param {type} mensaje Los mensajes a enviar
  * @returns {undefined} Undefined 
  */
-/* Script de controlador para la pagina chat
- */
+/* Script de controlador para la pagina chat */
 import {Mensaje} from './mensaje.js'
 
 var mensajes = new Array();
 
 function enviarMensaje(){
     // Poniendo un <textarea> el usuario visualiza el mensaje a enviar.
-    //Tambien se definira q por defecto este escrito "Escriba Aqui".
-    
-    let textoMensaje = document.getElementById('cajaMiMensaje').value;
-    
-    //Lo añadimos a la coleccion de mensajes
-    
-    mensajes.push(new Mensaje(textoMensaje, new Date()));
-    
+    //Tambien se definira q por defecto este escrito "Escriba Aqui".    
+    let textoMensaje = document.getElementById('cajaMiMensaje').value; 
+    //Lo añadimos a la coleccion de mensajes    
+    mensajes.push(new Mensaje(textoMensaje, new Date()));    
     //Limpiamos la caja de texto del mensaje
     document.getElementById('cajaMiMensaje').value = "";
     //Enfocamos la caja de texto del mensaje
@@ -52,7 +47,7 @@ function actualizarMensajes() {
         // create a new li element
         const newLi = document.createElement("li");
         // and give it the message's text content
-        const newContent = document.createTextNode(mensajes[i].text +" "+new Intl.DateTimeFormat("es-ES").format(mensajes[i].dateTime));
+        const newContent = document.createTextNode(mensajes[i].text + " "+ new Intl.DateTimeFormat("es-ES").format(mensajes[i].dateTime));
 
         // add the text node to the newly created div
         newLi.appendChild(newContent);

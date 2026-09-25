@@ -1,10 +1,35 @@
 /* 
- * Script de controlador para la pagina chat
+ * @author Hector Villamediana
  */
-import {Mensaje} from './mensaje.js';
-/** Array de mensajes */
-var mensajes = new Array();
 
+/**
+ * Esta funcion envia los mensajes 
+ * @param {type} mensaje Los mensajes a enviar
+ * @returns {undefined} Undefined 
+ */
+* Script de controlador para la pagina chat
+ */
+import {Mensaje} from './mensaje.js'
+
+var mensajes=new Array();
+
+function enviarMensaje(){
+    // Poniendo un <textarea> el usuario visualiza el mensaje a enviar.
+    //Tambien se definira q por defecto este escrito "Escriba Aqui".
+    
+    let textoMensaje=document.getElementById('cajaMiMensaje').value;
+    
+    //Lo añadimos a la coleccion de mensajes
+    
+    mensajes.push(new Mensaje(textoMensaje,new Date()));
+    
+    //Limpiamos la caja de texto del mensaje
+    document.getElementById('cajaMiMensaje').value="";
+    //Enfocamos la caja de texto del mensaje
+    document.getElementById('cajaMiMensaje').focus();
+    //Actualizamos la lista de mensajes
+    actualizarMensajes;
+}
 /**
  * Esta funcion muestra todos los mensajes del parametro 
  * en una pagina en forma de texto dentro de un contenedor DIV
@@ -24,13 +49,9 @@ function actualizarMensajes() {
         //Actualizamos la lista de mensajes
         
     }
-    //En cada iteracion añadimos al elemento <DIV> contenido consistente en 
-    //texto del mensaje
-    //dentro de un elemento de lista desordenada <UL> y <LI>
 
-
-}
-
-//Asocio a la funcion actualizarMensajes como manejadora del evento de carga del
-//DOM de la pagina 
+//Asoscio la funcion de enviar mensaje como manejadora del evento click del
+//elemento enviarBoton
+document.getElementById("enviarBoton").addEventListener('click',enviarMensaje);
 document.addEventListener('DCMContentLoaded', actualizarMensajes);
+

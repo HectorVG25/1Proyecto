@@ -1,11 +1,15 @@
-/* Este archivo contiene la calse mensaje para una aplicacion de chat.
- * @ author 
+/* 
+ * @author Hector Villamediana
  */
 
 class Mensaje {
+    /*
+     * Contructor de mensaje clase
+     */
     constructor(text, dateTime){
-        this.text = text;
+        this.text=text;
+        this.dateTime=dateTime;
     }
 }
 
-export{Mensaje};
+export {Mensaje};

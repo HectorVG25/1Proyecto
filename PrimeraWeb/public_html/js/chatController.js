@@ -26,6 +26,8 @@ function enviarMensaje(){
     document.getElementById('cajaMiMensaje').value="";
     //Enfocamos la caja de texto del mensaje
     document.getElementById('cajaMiMensaje').focus();
+    //Actualizamos la lista de mensajes
+    actualizarMensajes;
 }
 
 //Asoscio la funcion de enviar mensaje como manejadora del evento click del
